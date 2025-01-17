@@ -8,6 +8,7 @@ const durationEl = document.getElementById("duration");
 const songTitle = document.getElementById("song-title");
 const artistName = document.getElementById("artist-name");
 const songList = document.getElementById("song-list");
+const start = document.getElementById("start");
 
 let isPlaying = false;
 
@@ -78,10 +79,10 @@ function loadSong(index) {
 function togglePlay() {
   if (isPlaying) {
     audio.pause();
-    playBtn.textContent = "▶️";
+    start.src = "start.png";
   } else {
     audio.play();
-    playBtn.textContent = "⏸️";
+    start.src = "pause.png";
   }
   isPlaying = !isPlaying;
 }

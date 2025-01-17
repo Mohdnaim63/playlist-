@@ -83,23 +83,23 @@ li:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-input:checked ~ .toggle .top_line {
+#menu:checked ~ .toggle .top_line {
   left: 2px;
   top: 14px;
   width: 25px;
   transform: rotate(45deg);
 }
-input:checked ~ .toggle .bottum_line {
+#menu:checked ~ .toggle .bottum_line {
   left: 2px;
   top: 14px;
   width: 25px;
   transform: rotate(-45deg);
 }
-input:checked ~ .toggle .middle_line {
+#menu:checked ~ .toggle .middle_line {
   opacity: 0;
   transform: translateX(20);
 }
-input:checked ~ .slide {
+#menu:checked ~ .slide {
   transform: translateX(0);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -138,7 +138,7 @@ input:checked ~ .slide {
 }
 
 .controls button {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 10px;
   background: none;
   color: white;
@@ -150,16 +150,30 @@ input:checked ~ .slide {
 .controls button:hover {
   color: #1db954;
 }
+.controls {
+  display: flex;
+  justify-content: center;
+}
 
 .progress-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 15px;
+  width: 100%;
+  /* border: 1px solid red; */
 }
 #progress {
   flex: 1;
+  height: 4px;
   margin: 0 10px;
+}
+.icon {
+  width: 35px;
+  height: 35px;
+}
+.icon:hover {
+  transform: scale(1.2);
 }
 
 @media only screen and (max-width: 450px) {
@@ -180,9 +194,16 @@ input:checked ~ .slide {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.2);
     color: white;
     transition: transform 0.3s ease-in-out;
+  }
+  .controls {
+    width: 60%;
+    justify-content: space-between;
+  }
+  ul li {
+    border-bottom: 1px solid #505050;
   }
   .slide {
     background-color: #ccc;
@@ -192,6 +213,7 @@ input:checked ~ .slide {
     background-color: lightgray;
     cursor: pointer;
   }
+  .a
 
   /* By default hidden */
   .music-player.hidden {
@@ -207,14 +229,22 @@ input:checked ~ .slide {
     z-index: 1;
   }
   #song-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #000000;
     /* margin-top: 50px; */
   }
   #artist-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #000000;
   }
   .search-container {
     visibility: hidden;
     width: 0;
   }
+  /* #current-time {
+    color: #080808;
+  }
+  #duration {
+    color: #0f0f0f;
+  } */
 }
