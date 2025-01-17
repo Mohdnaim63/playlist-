@@ -168,13 +168,13 @@ input:checked ~ .slide {
     overflow-y: hidden;
   }
   .music-player {
-    position: fixed; /* Taaki full screen cover kare */
+    position: fixed;
     top: 0;
     left: 0;
     right: 10%;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    backdrop-filter: blur(10px); /* Blur effect */
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,7 +183,6 @@ input:checked ~ .slide {
     background: rgba(0, 0, 0, 0.7);
     color: white;
     transition: transform 0.3s ease-in-out;
-    /* z-index: -1; */
   }
   .slide {
     background-color: #ccc;
@@ -203,16 +202,13 @@ input:checked ~ .slide {
   .menu-open .music-player {
     transform: translateY(0);
   }
-  .album-art img {
-    margin-top: 100px;
-  }
   .controls button {
     font-size: 2rem;
     z-index: 1;
   }
   #song-title {
     font-size: 2rem;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   #artist-name {
     font-size: 2rem;
