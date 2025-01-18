@@ -54,13 +54,13 @@ const songs = [
     title: "Phir se ud chala",
     artist: "Mohit Chauhan",
     src: "phir-se-ud-chala.mp3",
-    cover: "album-cover7.webp",
+    cover: "album-cover8.jpg",
   },
   {
     title: "Nadaan Parindey",
     artist: "Mohit Chauhan",
     src: "Nadaan-parindey.mp3",
-    cover: "album-cover8.jpeg",
+    cover: "album-cover7.jpeg",
   },
 ];
 
@@ -96,7 +96,7 @@ function nextSong() {
 
 // Previous Song
 function prevSong() {
-  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+  currentSongIndex = (currentSongIndex - 1) % songs.length;
   loadSong(currentSongIndex);
   if (isPlaying) audio.play();
 }
@@ -113,6 +113,9 @@ audio.addEventListener("timeupdate", () => {
 progress.addEventListener("input", () => {
   const { duration } = audio;
   audio.currentTime = (progress.value / 100) * duration;
+  if (progress.value === duration) {
+    start.src = "start.png";
+  }
 });
 
 // Format time (mm:ss)
@@ -135,10 +138,15 @@ songList.addEventListener("click", (e) => {
       currentSongIndex = selectedSongIndex; // Update current index
       loadSong(currentSongIndex); // Load selected song
       audio.play(); // Play song
-      playBtn.textContent = "⏸️"; // Update play button
+      start.src = "pause.png";
+
       isPlaying = true;
     }
   }
+});
+audio.addEventListener("ended", function () {
+  start.src = "start.png";
+  isPlaying = false;
 });
 
 // Event listeners

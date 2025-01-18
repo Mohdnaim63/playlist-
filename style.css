@@ -195,7 +195,7 @@ li:hover {
     align-items: center;
     text-align: center;
     background: rgba(0, 0, 0, 0.2);
-    color: white;
+    /* color: white; */
     transition: transform 0.3s ease-in-out;
   }
   .controls {
@@ -234,17 +234,7 @@ li:hover {
     /* margin-top: 50px; */
   }
   #artist-name {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #000000;
   }
-  .search-container {
-    visibility: hidden;
-    width: 0;
-  }
-  /* #current-time {
-    color: #080808;
-  }
-  #duration {
-    color: #0f0f0f;
-  } */
 }
