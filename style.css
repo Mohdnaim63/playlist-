@@ -14,6 +14,8 @@ body {
   position: absolute;
   transition: 0.5s ease;
   transform: translateX(-300px);
+  z-index: 1;
+  background-color: #cccccce3;
 }
 .album-cover {
   width: 40px;
@@ -36,11 +38,11 @@ ul li {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #20070754;
   color: #000000;
 }
 li:hover {
-  background-color: #ccc;
+  background-color: #949393a1;
   cursor: pointer;
 }
 #menu {
@@ -109,9 +111,27 @@ li:hover {
   height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
+  backdrop-filter: blur(4px);
+}
+
+.left-content {
+  max-width: 500px;
+  padding: 20px;
+  margin-left: 50px;
+}
+.left-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+.left-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
 }
 
 .music-player {
@@ -124,6 +144,7 @@ li:hover {
   backdrop-filter: blur(8px);
   box-shadow: -4px -3px 101px -4px rgba(0, 0, 0, 0.93);
   transition: transform 0.3s ease-in-out;
+  right: 28%;
 }
 
 .album-art img {
@@ -181,6 +202,9 @@ li:hover {
     justify-content: center;
     overflow-y: hidden;
   }
+  .left-content {
+    visibility: hidden;
+  }
   .music-player {
     position: fixed;
     top: 0;
@@ -213,14 +237,10 @@ li:hover {
     background-color: lightgray;
     cursor: pointer;
   }
-  .a
-
-  /* By default hidden */
-  .music-player.hidden {
+  .a .music-player.hidden {
     transform: translateY(100%);
   }
 
-  /* Menu open hone par visible hoga */
   .menu-open .music-player {
     transform: translateY(0);
   }
@@ -236,5 +256,11 @@ li:hover {
   #artist-name {
     font-size: 1rem;
     color: #000000;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .left-content {
+    visibility: hidden;
   }
 }

@@ -113,9 +113,9 @@ audio.addEventListener("timeupdate", () => {
 progress.addEventListener("input", () => {
   const { duration } = audio;
   audio.currentTime = (progress.value / 100) * duration;
-  if (progress.value === duration) {
-    start.src = "start.png";
-  }
+  // if (progress.value === duration) {
+  //   start.src = "start.png";
+  // }
 });
 
 // Format time (mm:ss)
